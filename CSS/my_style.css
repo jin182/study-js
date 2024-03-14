@@ -1,0 +1,8 @@
+.msgBox {
+    background: rgb(125, 209, 242);
+    color: magenta;
+    width: 300px;
+    padding: 20px;
+    border-radius: 5px;
+    display: none;
+}

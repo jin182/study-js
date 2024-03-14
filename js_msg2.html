@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>js_msg2</title>
+        <link rel="stylesheet" href="./CSS/my_style.css" />
+    </head>
+    <body>
+        <div class="msgBox" id="msgBox">
+            <p id="msg">경소고화이팅</p>
+            <button onclick="clickbutton('none');">닫기</button>
+        </div>
+        <button onclick="clickbutton('block');">열기</button>
+
+        <script>
+            function clickbutton(action) {
+                if (action === 'block') {
+                    document.getElementsByClassName('msgBox')[0].style.display = 'block';
+                } else if (action === 'none') {
+                    document.getElementsByClassName('msgBox')[0].style.display = 'none';
+                }
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>js_msg1</title>
+        <link rel="stylesheet" href="./CSS/my_style.css" />
+    </head>
+    <body>
+        <div class="msgBox" id="msgBox">
+            <p id="msg">경소고화이팅</p>
+            <button onclick="closebutton();">닫기</button>
+        </div>
+        <button onclick="openbutton();">열기</button>
+
+        <script>
+            function openbutton() {
+                document.getElementsByClassName('msgBox')[0].style.display = 'block';
+            }
+            function closebutton() {
+                document.getElementsByClassName('msgBox')[0].style.display = 'none';
+            }
+        </script>
+    </body>
+</html>

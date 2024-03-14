@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>회원가입-자바스크립트</title>
+        <script language="javascript">
+            function validate() {
+                var re = /^[a-zA-Z0-9]{4,12}$/;
+                var re2 = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
+
+                var num1 = document.getElementById('unum1');
+                var num2 = document.getElementById('unum2');
+
+                var arrNum1 = new Array();
+                var arrNum2 = new Array();
+
+                // -------------- 주민번호 -------------
+
+                for (var i = 0; i < num1.value.length; i++) {
+                    arrNum1[i] = num1.value.charAt(i);
+                }
+
+                for (var i = 0; i < num2.value.length; i++) {
+                    arrNum2[i] = num2.value.charAt(i);
+                }
+
+                var tempSum = 0;
+
+                for (var i = 0; i < num1.value.length; i++) {
+                    tempSum += arrNum1[i] * (2 + i);
+                }
+
+                for (var i = 0; i < num2.value.length - 1; i++) {
+                    if (i >= 2) {
+                        tempSum += arrNum2[i] * i;
+                    } else {
+                        tempSum += arrNum2[i] * (8 + i);
+                    }
+                }
+
+                if ((11 - (tempSum % 11)) % 10 != arrNum2[6]) {
+                    alert('올바른 주민번호가 아닙니다.');
+                    num1.value = '';
+                    num2.value = '';
+                    num1.focus();
+                    return false;
+                } else {
+                    alert('올바른 주민등록번호 입니다.');
+                }
+            }
+
+            function check(re, what, message) {
+                if (re.test(what.value)) {
+                    return true;
+                }
+                alert(message);
+                what.value = '';
+                what.focus();
+            }
+        </script>
+    </head>
+    <body>
+        <table width="350" height="100" border="1" align="center" cellspacing="0">
+            <tr height="10" align="center">
+                <td colspan="2" style="background: navy">
+                    <font color="white"><b>주민등록 유효성검사</b></font>
+                </td>
+            </tr>
+            <tr>
+                <td align="center">주민등록번호:</td>
+                <td align="center">
+                    <input type="text" name="unum1" id="unum1" size="12" maxlength="6" />-
+                    <input type="password" name="unum2" id="unum2" size="12" maxlength="7" /><br />
+                    예) 123456-1234567
+                </td>
+            </tr>
+        </table>
+        <center>
+            <br />
+            <input type="button" value="검사" style="border-radius: 5px; font-size: 14px" onclick="validate();" />
+            <input type="reset" value="다시입력" style="border-radius: 5px" />
+        </center>
+    </body>
+</html>

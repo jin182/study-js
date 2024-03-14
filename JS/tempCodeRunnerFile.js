@@ -1,0 +1,1 @@
+this._age = value < 0 ? 0 : value;

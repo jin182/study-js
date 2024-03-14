@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>js_msg4</title>
+        <link rel="stylesheet" href="./CSS/my_style.css" />
+    </head>
+    <body>
+        <div class="msgBox" id="msgBox">
+            <p id="title">경소고화이팅</p>
+            <button onclick="clickbutton('none');">닫기</button>
+        </div>
+        <button onclick="clickbutton('경소고화이팅!!!','block')">경소고</button>
+        <button onclick="clickbutton('봉양중화이팅!!!','block')">봉양중</button>
+    </body>
+    <script>
+        function clickbutton(action, text) {
+            if (action === 'none') {
+                document.getElementsByClassName('msgBox')[0].style.display = 'none';
+            } else if (action === '경소고화이팅!!!' || 'block') {
+                let msgBox = document.getElementsByClassName('msgBox')[0];
+                msgBox.style.display = 'block';
+            } else if (action === "봉양중화이팅!!! || "")
+
+            document.getElementById('title').innerHTML = text;
+    </script>
+</html>
